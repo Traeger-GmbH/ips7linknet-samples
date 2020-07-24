@@ -3,9 +3,9 @@ Here you will find sample projects for C# and VB.NET to guide developers of IP S
 
 ## SDK
 All the samples/projects provided in this repository rely on our IP S7 LINK .NET SDK (IPS7LnkNet.Advanced):
- * [NuGet Package](https://www.nuget.org/packages/Opc.UaFx.Client/)
- * [ZIP Archive](https://docs.traeger.de/downloads?do=download_latest&name=opc.uafx.client&type=zip)
- * [Development Guide](https://docs.traeger.de/en/software/sdk/opc-ua/net/client.development.guide)
+ * [NuGet Package](https://www.nuget.org/packages/IPS7LnkNet.Advanced/)
+ * [ZIP Archive](https://docs.traeger.de/downloads?do=download_latest&name=ips7lnknet.advanced&type=zip)
+ * [Development Guide](https://docs.traeger.de/en/software/sdk/s7/net/development.guide)
 
 ## Usage
 The samples are implemented to use them quite headless with an absolute minimum number of dependencies (per sample/project). We want to encourage you to copy and use them as you want to fulfil your needs accordingly without any restrictions. To do so you may chose one of the following approaches.
