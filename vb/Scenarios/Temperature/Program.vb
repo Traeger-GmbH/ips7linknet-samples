@@ -6,9 +6,7 @@ Imports IPS7LnkNet.Advanced
 Namespace App
     Public Class Program
         Public Shared Sub Main()
-            Dim device = New SiemensDevice( _
-                    New IPDeviceEndPoint("192.168.0.80"), _
-                    SiemensDeviceType.S71500)
+            Dim device = New SiemensDevice("192.168.0.80")
 
             Using connection = device.CreateConnection()
                 connection.Open()
