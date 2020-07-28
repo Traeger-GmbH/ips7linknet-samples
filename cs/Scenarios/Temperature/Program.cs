@@ -9,9 +9,7 @@ namespace App
     {
         public static void Main()
         {
-            var device = new SiemensDevice(
-                    new IPDeviceEndPoint("192.168.0.80"),
-                    SiemensDeviceType.S71500);
+            var device = new SiemensDevice("192.168.0.80");
 
             using (var connection = device.CreateConnection()) {
                 connection.Open();
