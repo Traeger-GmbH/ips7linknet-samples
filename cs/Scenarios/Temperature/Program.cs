@@ -3,7 +3,7 @@ namespace App
     using System;
     using System.Threading;
 
-    using IPS7LnkNet.Advanced;
+    using IPS7Lnk.Advanced;
 
     public class Program
     {

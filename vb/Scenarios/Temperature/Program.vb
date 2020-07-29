@@ -1,7 +1,7 @@
 Imports System
 Imports System.Threading
 
-Imports IPS7LnkNet.Advanced
+Imports IPS7Lnk.Advanced
 
 Namespace App
     Public Class Program
