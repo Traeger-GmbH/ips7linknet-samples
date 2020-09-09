@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net46;net471</TargetFrameworks>
+    <TargetFrameworks>net46;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)'=='net46' or '$(TargetFramework)'=='net471'">
     <PlatformTarget>x86</PlatformTarget>

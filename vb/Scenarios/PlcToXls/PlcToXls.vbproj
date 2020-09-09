@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net46;net471</TargetFrameworks>
+    <TargetFrameworks>net46;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="IPS7LnkNet.Advanced" Version="2.2.0" />
