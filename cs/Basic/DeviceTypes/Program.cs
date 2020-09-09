@@ -25,9 +25,7 @@ namespace DeviceTypes
                 //// result into a device object which can be used to access S7-300 and S7-400 PLC
                 //// devices.
 
-                SiemensDevice device = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"));
-
+                SimaticDevice device = new SimaticDevice("192.168.0.80");
                 Console.WriteLine("Default Device.Type={0}", device.Type);
             }
             #endregion
@@ -38,24 +36,16 @@ namespace DeviceTypes
                 //// constructor which besides of an end point does also accept device type
                 //// information.
 
-                SiemensDevice device1 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.Logo);
-
+                SimaticDevice device1 = new SimaticDevice("192.168.0.80", SimaticDeviceType.Logo);
                 Console.WriteLine("Explicit Device1.Type={0}", device1.Type);
 
-                SiemensDevice device2 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400);
-
+                SimaticDevice device2 = new SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400);
                 Console.WriteLine("Explicit Device2.Type={0}", device2.Type);
 
-                SiemensDevice device3 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71200);
-
+                SimaticDevice device3 = new SimaticDevice("192.168.0.80", SimaticDeviceType.S71200);
                 Console.WriteLine("Explicit Device3.Type={0}", device3.Type);
 
-                SiemensDevice device4 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71500);
-
+                SimaticDevice device4 = new SimaticDevice("192.168.0.80", SimaticDeviceType.S71500);
                 Console.WriteLine("Explicit Device4.Type={0}", device4.Type);
             }
             #endregion
@@ -65,16 +55,14 @@ namespace DeviceTypes
                 //// Independent from the way how you decide to initialize your device object you
                 //// are always able to change the device type at runtime.
 
-                SiemensDevice device1 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"));
+                SimaticDevice device1 = new SimaticDevice("192.168.0.80");
+                device1.Type = SimaticDeviceType.S71500;
 
-                device1.Type = SiemensDeviceType.S71500;
                 Console.WriteLine("Late Device1.Type={0}", device1.Type);
 
-                SiemensDevice device2 = new SiemensDevice(
-                        new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71500);
+                SimaticDevice device2 = new SimaticDevice("192.168.0.80", SimaticDeviceType.S71500);
+                device2.Type = SimaticDeviceType.S7300_400;
 
-                device2.Type = SiemensDeviceType.S7300_400;
                 Console.WriteLine("Late Device2.Type={0}", device2.Type);
             }
             #endregion

@@ -19,8 +19,7 @@ Namespace PlcToSql
     ''' </remarks>
     Public Class Program
         Public Shared Sub Main(ByVal args As String())
-            Dim device As SiemensDevice = New SiemensDevice( _
-                    New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400)
+            Dim device As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400)
 
             Dim connection As PlcDeviceConnection = device.CreateConnection()
             connection.Open()

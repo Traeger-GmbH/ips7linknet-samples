@@ -12,8 +12,7 @@ namespace Exceptions
     {
         public static void Main(string[] args)
         {
-            SiemensDevice device = new SiemensDevice(
-                    new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400);
+            SimaticDevice device = new SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400);
 
             PlcDeviceConnection connection = device.CreateConnection();
             connection.Open();

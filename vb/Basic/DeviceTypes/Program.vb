@@ -21,8 +21,7 @@ Namespace DeviceTypes
                 ' constructor accepting the end point information. Using this constructor will
                 ' result into a device object which can be used to access S7-300 and S7-400 PLC
                 ' devices.
-                Dim device As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"))
+                Dim device As SimaticDevice = New SimaticDevice("192.168.0.80")
 
                 Console.WriteLine("Default Device.Type={0}", device.Type)
             End If
@@ -33,23 +32,19 @@ Namespace DeviceTypes
                 ' constructor which besides of an end point does also accept device type
                 ' information.
 
-                Dim device1 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.Logo)
+                Dim device1 As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.Logo)
 
                 Console.WriteLine("Explicit Device1.Type={0}", device1.Type)
 
-                Dim device2 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400)
+                Dim device2 As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400)
 
                 Console.WriteLine("Explicit Device2.Type={0}", device2.Type)
 
-                Dim device3 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71200)
+                Dim device3 As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S71200)
 
                 Console.WriteLine("Explicit Device3.Type={0}", device3.Type)
 
-                Dim device4 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71500)
+                Dim device4 As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S71500)
 
                 Console.WriteLine("Explicit Device4.Type={0}", device4.Type)
             End If
@@ -59,16 +54,14 @@ Namespace DeviceTypes
                 ' Independent from the way how you decide to initialize your device object you
                 ' are always able to change the device type at runtime.
 
-                Dim device1 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"))
+                Dim device1 As SimaticDevice = New SimaticDevice("192.168.0.80")
+                device1.Type = SimaticDeviceType.S71500
 
-                device1.Type = SiemensDeviceType.S71500
                 Console.WriteLine("Late Device1.Type={0}", device1.Type)
 
-                Dim device2 As SiemensDevice = New SiemensDevice( _
-                        New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S71500)
+                Dim device2 As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S71500)
+                device2.Type = SimaticDeviceType.S7300_400
 
-                device2.Type = SiemensDeviceType.S7300_400
                 Console.WriteLine("Late Device2.Type={0}", device2.Type)
             End If
 

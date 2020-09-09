@@ -18,9 +18,7 @@ dotnet sln add ./S7App/S7App.csproj
 ## 2. Implement S7 App
 
 ```csharp
-var device = new SiemensDevice(
-        new IPDeviceEndPoint("192.168.0.80"),
-        SiemensDeviceType.S71500);
+var device = new SimaticDevice("192.168.0.80", SimaticDeviceType.S71500);
 
 using (var connection = device.CreateConnection()) {
     connection.Open();

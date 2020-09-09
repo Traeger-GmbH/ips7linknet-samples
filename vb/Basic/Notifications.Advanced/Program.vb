@@ -31,8 +31,7 @@ Namespace Notifications
             ' ensure that only in specific conditions failed operations will lead to an exception.
             PlcNotifications.EvaluateStatus = AddressOf Program.EvaluateStatus
 
-            Dim device As SiemensDevice = New SiemensDevice( _
-                    New IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400)
+            Dim device As SimaticDevice = New SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400)
 
             Dim connection As PlcDeviceConnection = device.CreateConnection()
 

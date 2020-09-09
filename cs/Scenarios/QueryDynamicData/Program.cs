@@ -26,8 +26,7 @@ namespace QueryDynamicData
             //// It just demonstrates one possible way to refer to dynamic PLC data in an
             //// independent way.
 
-            SiemensDevice device = new SiemensDevice(
-                    new IPDeviceEndPoint("192.168.0.80"), SiemensDeviceType.S7300_400);
+            SimaticDevice device = new SimaticDevice("192.168.0.80", SimaticDeviceType.S7300_400);
 
             PlcDeviceConnection connection = device.CreateConnection();
             connection.Open();
