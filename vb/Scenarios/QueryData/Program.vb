@@ -45,11 +45,11 @@ Namespace QueryData
                 ' previous one, because the values are write/read within one transaction
                 ' instead of processing each value within a transaction for each action.
 
-                connection.WriteValues( _
-                        New PlcByte("DB111.DBB 2", 15), _
-                        New PlcInt16("DB111.DBW 4", 600), _
-                        New PlcInt32("DB111.DBD 6", 280), _
-                        New PlcReal("DB111.DBD 10", 2.46F), _
+                connection.WriteValues(
+                        New PlcByte("DB111.DBB 2", CType(15, Byte)),
+                        New PlcInt16("DB111.DBW 4", CType(600, Short)),
+                        New PlcInt32("DB111.DBD 6", 280),
+                        New PlcReal("DB111.DBD 10", 2.46F),
                         New PlcString("DB111.DBB 20", "4-036300-076816", 16))
 
                 Dim values As Object() = connection.ReadValues( _
