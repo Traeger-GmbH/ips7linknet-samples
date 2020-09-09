@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Basic\Events\Even
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Basic\Exceptions\Exceptions.csproj", "{E045A967-72A7-41EC-94B4-81333023B978}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorlds", "Basic\HelloWorld\HelloWorlds.csproj", "{02780D35-5795-440D-9CD6-C315F144A8E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "Basic\HelloWorld\HelloWorld.csproj", "{02780D35-5795-440D-9CD6-C315F144A8E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifications", "Basic\Notifications\Notifications.csproj", "{D2FC8386-C313-4809-881A-D714A52ECB41}"
 EndProject
