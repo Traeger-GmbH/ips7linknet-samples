@@ -27,8 +27,12 @@ namespace SqlToPlc
             PlcDeviceConnection connection = device.CreateConnection();
             connection.Open();
 
-            SQLiteConnection sqlConnection = new SQLiteConnection(@"Data Source=.\Database.db");
-            sqlConnection.Open();
+            SQLiteConnectionStringBuilder builder = new SQLiteConnectionStringBuilder();
+            builder.DataSource = @".\Database.db";
+
+            SQLiteConnection sqlConnection = new SQLiteConnection(
+                    builder.ToString(),
+                    parseViaFramework: true);
 
             SQLiteCommand command = sqlConnection.CreateCommand();
             command.CommandText = "select * from Data";
