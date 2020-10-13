@@ -13,7 +13,7 @@ Namespace App
 
                 While True
                     Dim temperature = connection.ReadDouble("DB10.DBD 20")
-                    Console.WriteLine($"Current Temperature is {0} °C", temperature)
+                    Console.WriteLine("Current Temperature is {0} °C", temperature)
 
                     Thread.Sleep(1000)
                 End While
