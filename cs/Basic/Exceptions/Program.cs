@@ -27,9 +27,8 @@ namespace Exceptions
                 try {
                     connection.ReadInt16("DB111.DBD 6");
                 }
-                catch (PlcException ex) {
+                catch (ArgumentException ex) {
                     Console.WriteLine(ex.Message);
-                    Console.WriteLine("-> Code: {0} ({1})", ex.Code, ex.ErrorCode);
                 }
             }
             #endregion
@@ -47,8 +46,9 @@ namespace Exceptions
                 //// This way does demonstrate that the connection will be passed to the global
                 //// evaluation callback.
 
+                // The following assumes that 'DB65535' does not exists in the PLC.
                 PlcNotifications.EvaluateStatus = Program.EvaluateStatus;
-                connection.ReadInt16("DB111.DBD 6");
+                connection.ReadInt16("DB65535.DBW 6");
             }
             #endregion
 
@@ -67,7 +67,8 @@ namespace Exceptions
 
                 PlcNotifications.EvaluateStatus = Program.EvaluateStatus;
 
-                PlcInt16 value = new PlcInt16("DB111.DBX 6.0");
+                // The following assumes that 'DB111.DBW 6' does not exists in the PLC.
+                PlcInt16 value = new PlcInt16("DB111.DBW 6");
                 connection.ReadValues(value);
             }
             #endregion

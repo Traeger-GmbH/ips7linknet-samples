@@ -23,9 +23,8 @@ Namespace Exceptions
 
                 Try
                     connection.ReadInt16("DB111.DBD 6")
-                Catch ex As PlcException
+                Catch ex As ArgumentException
                     Console.WriteLine(ex.Message)
-                    Console.WriteLine("-> Code: {0} ({1})", ex.Code, ex.ErrorCode)
                 End Try
             End If
 
@@ -42,8 +41,9 @@ Namespace Exceptions
                 ' This way does demonstrate that the connection will be passed to the global
                 ' evaluation callback.
 
+                ' The following assumes that 'DB65535' does not exists in the PLC.
                 PlcNotifications.EvaluateStatus = AddressOf Program.EvaluateStatus
-                connection.ReadInt16("DB111.DBD 6")
+                connection.ReadInt16("DB65535.DBW 6");
             End If
 
             ' 3. Way: Global status evaluation (via value).
@@ -61,7 +61,8 @@ Namespace Exceptions
 
                 PlcNotifications.EvaluateStatus = AddressOf Program.EvaluateStatus
 
-                Dim value As PlcInt16 = New PlcInt16("DB111.DBX 6.0")
+                ' The following assumes that 'DB111.DBW 6' does not exists in the PLC.
+                Dim value As PlcInt16 = New PlcInt16("DB111.DBW 6")
                 connection.ReadValues(value)
             End If
 
