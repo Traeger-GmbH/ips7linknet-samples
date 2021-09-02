@@ -21,8 +21,8 @@ namespace Exceptions
             {
                 //// An exception can occur upon different reasons, for e.g. either the IP address
                 //// of the PLC device is wrong, the PLC itself is not available or the PLC address
-                //// specified (like in the following example) is invalid. In such cases will then
-                //// an exception of the type 'PlcException' thrown.
+                //// specified (like in the following example) is invalid. In such a case an
+                //// exception of the type 'ArgumentException' is thrown.
 
                 try {
                     connection.ReadInt16("DB111.DBD 6");
