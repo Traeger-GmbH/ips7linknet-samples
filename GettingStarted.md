@@ -25,6 +25,6 @@ using (var connection = device.CreateConnection()) {
     Console.WriteLine("Device connection is opened...");
     
     var temperature = connection.ReadDouble("DB10.DBD 20");
-    Console.WriteLine($"Current Temperature is {temperature} °C");
+    Console.WriteLine("Current Temperature is {0} °C", temperature);
 }
 ```
