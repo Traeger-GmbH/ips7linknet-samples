@@ -16,6 +16,8 @@ Namespace SqlToPlc
     ''' This application does read the print job information from a SQLite
     ''' database, writes the job configuration to the PLC and when waits until the job has been
     ''' processed by the PLC.
+    ''' The System.Data.SQLite.Core package provides no native library for Windows on ARM64;
+    ''' on such a machine run the sample as x64 process (dotnet run -a x64) or use net472.
     ''' </remarks>
     Public Class Program
         Public Shared Sub Main(ByVal args As String())

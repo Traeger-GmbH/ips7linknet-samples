@@ -17,6 +17,8 @@ namespace PlcToSql
     /// This application does read the weather data from the PLC and when writes the data to a
     /// SQLite database. After a weather record has been written by the logger,
     /// the logger does wait for 30 minutes before the next record will be read from the PLC.
+    /// The System.Data.SQLite.Core package provides no native library for Windows on ARM64;
+    /// on such a machine run the sample as x64 process (dotnet run -a x64) or use net472.
     /// </remarks>
     public class Program
     {
