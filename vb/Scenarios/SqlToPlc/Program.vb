@@ -9,11 +9,11 @@ Imports IPS7Lnk.Advanced
 
 Namespace SqlToPlc
     ''' <summary>
-    ''' This sample demonstrates a price label printing application which uses a Microsoft
-    ''' SQL Server database as data source of the information required to print the price labels.
+    ''' This sample demonstrates a price label printing application which uses a SQLite
+    ''' database as data source of the information required to print the price labels.
     ''' </summary>
     ''' <remarks>
-    ''' This application does read the print job information from a Microsoft SQL Server
+    ''' This application does read the print job information from a SQLite
     ''' database, writes the job configuration to the PLC and when waits until the job has been
     ''' processed by the PLC.
     ''' </remarks>

@@ -4,6 +4,10 @@ Imports System.Threading
 Imports IPS7Lnk.Advanced
 
 Namespace App
+    ''' <summary>
+    ''' This sample demonstrates a temperature monitor which reads the temperature from the PLC
+    ''' once per second.
+    ''' </summary>
     Public Class Program
         Public Shared Sub Main()
             Dim device = New SimaticDevice("192.168.0.80")

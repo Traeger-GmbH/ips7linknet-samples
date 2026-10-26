@@ -5,6 +5,10 @@ namespace App
 
     using IPS7Lnk.Advanced;
 
+    /// <summary>
+    /// This sample demonstrates a temperature monitor which reads the temperature from the PLC
+    /// once per second.
+    /// </summary>
     public class Program
     {
         public static void Main()
@@ -16,7 +20,7 @@ namespace App
 
                 while (true) {                    
                     var temperature = connection.ReadDouble("DB10.DBD 20");
-                    Console.WriteLine($"Current Temperature is {0} °C", temperature);
+                    Console.WriteLine("Current Temperature is {0} °C", temperature);
 
                     Thread.Sleep(1000);
                 }

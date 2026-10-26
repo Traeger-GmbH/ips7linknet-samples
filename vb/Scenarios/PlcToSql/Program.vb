@@ -10,11 +10,11 @@ Imports IPS7Lnk.Advanced
 Namespace PlcToSql
     ''' <summary>
     ''' This sample demonstrates a weather station logger application which writes PLC weather
-    ''' data to a Microsoft SQL Server database.
+    ''' data to a SQLite database.
     ''' </summary>
     ''' <remarks>
     ''' This application does read the weather data from the PLC and when writes the data to a
-    ''' Microsoft SQL Server database. After a weather record has been written by the logger,
+    ''' SQLite database. After a weather record has been written by the logger,
     ''' the logger does wait for 30 minutes before the next record will be read from the PLC.
     ''' </remarks>
     Public Class Program
