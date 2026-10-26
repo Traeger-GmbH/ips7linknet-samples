@@ -72,7 +72,7 @@ Namespace Address
                 Dim address1 As PlcAddress = " dB 100  . Db 1    . 0  "
 
                 ' The following example results into the address: 'E 1.0'.
-                Dim address2 As PlcAddress = " E x 1  "
+                Dim address2 As PlcAddress = " E x 1 . 0 "
             End If
 
             ' 2. Way: Siemens and IEC conform address support.

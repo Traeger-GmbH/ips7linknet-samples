@@ -79,7 +79,7 @@ namespace Address
                 PlcAddress address1 = " dB 100  . Db 1    . 0  ";
 
                 // The following example results into the address: 'E 1.0'.
-                PlcAddress address2 = " E x 1  ";
+                PlcAddress address2 = " E x 1 . 0 ";
             }
             #endregion
 

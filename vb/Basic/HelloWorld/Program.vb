@@ -5,7 +5,7 @@ Imports IPS7Lnk.Advanced
 
 Namespace HelloWorld
     ''' <summary>
-    '' This sample demonstrates a Hello World! application.
+    ''' This sample demonstrates a Hello World! application.
     ''' </summary>
     ''' <remarks>
     ''' This application does write/read the 'Hello World!' message to/from the PLC and when

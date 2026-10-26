@@ -43,7 +43,7 @@ Namespace Exceptions
 
                 ' The following assumes that 'DB65535' does not exists in the PLC.
                 PlcNotifications.EvaluateStatus = AddressOf Program.EvaluateStatus
-                connection.ReadInt16("DB65535.DBW 6");
+                connection.ReadInt16("DB65535.DBW 6")
             End If
 
             ' 3. Way: Global status evaluation (via value).
