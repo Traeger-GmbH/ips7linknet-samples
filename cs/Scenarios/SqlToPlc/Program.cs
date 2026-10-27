@@ -36,6 +36,8 @@ namespace SqlToPlc
                     builder.ToString(),
                     parseViaFramework: true);
 
+            sqlConnection.Open();
+
             SQLiteCommand command = sqlConnection.CreateCommand();
             command.CommandText = "select * from Data";
 
