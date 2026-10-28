@@ -4,6 +4,6 @@
     <TargetFrameworks>net472;net8.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IPS7LnkNet.Advanced" Version="2.6.0-local.9902c827" />
+    <PackageReference Include="IPS7LnkNet.Advanced" Version="2.6.0-local.c34f6fde" />
   </ItemGroup>
 </Project>

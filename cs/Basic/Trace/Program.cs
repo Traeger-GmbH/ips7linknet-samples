@@ -32,11 +32,11 @@ namespace Trace
             #region 2. Enable the trace
             // The levels are flags, not a threshold: an entry is written if its level is part of
             // Level. Verbose entries contain addresses and values; use them for debugging only.
-            PlcTrace.Level = PlcTraceLevel.Error
-                    | PlcTraceLevel.Warning
-                    | PlcTraceLevel.Information;
-            PlcTrace.WriteEntry = Program.HandleTraceEntry;
-            PlcTrace.IsEnabled = true;
+            PlcTracing.Level = PlcTracingLevel.Error
+                    | PlcTracingLevel.Warning
+                    | PlcTracingLevel.Information;
+            PlcTracing.WriteEntry = Program.HandleTraceEntry;
+            PlcTracing.IsEnabled = true;
             #endregion
 
             #region 3. Accesses that write entries
@@ -60,12 +60,12 @@ namespace Trace
             }
             #endregion
 
-            PlcTrace.IsEnabled = false;
+            PlcTracing.IsEnabled = false;
             Program.entries.CompleteAdding();
             writer.Join();
         }
 
-        private static void HandleTraceEntry(PlcTraceLevel level, string message)
+        private static void HandleTraceEntry(PlcTracingLevel level, string message)
         {
             Program.entries.Add(string.Format("Trace {0}: {1}", level, message));
         }

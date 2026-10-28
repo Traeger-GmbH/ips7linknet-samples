@@ -32,11 +32,11 @@ Namespace Trace
 #Region "2. Enable the trace"
             ' The levels are flags, not a threshold: an entry is written if its level is part of
             ' Level. Verbose entries contain addresses and values; use them for debugging only.
-            PlcTrace.Level = PlcTraceLevel.Error _
-                    Or PlcTraceLevel.Warning _
-                    Or PlcTraceLevel.Information
-            PlcTrace.WriteEntry = AddressOf Program.HandleTraceEntry
-            PlcTrace.IsEnabled = True
+            PlcTracing.Level = PlcTracingLevel.Error _
+                    Or PlcTracingLevel.Warning _
+                    Or PlcTracingLevel.Information
+            PlcTracing.WriteEntry = AddressOf Program.HandleTraceEntry
+            PlcTracing.IsEnabled = True
 #End Region
 
 #Region "3. Accesses that write entries"
@@ -60,12 +60,12 @@ Namespace Trace
             End Using
 #End Region
 
-            PlcTrace.IsEnabled = False
+            PlcTracing.IsEnabled = False
             Program.entries.CompleteAdding()
             writer.Join()
         End Sub
 
-        Private Shared Sub HandleTraceEntry(ByVal level As PlcTraceLevel, ByVal message As String)
+        Private Shared Sub HandleTraceEntry(ByVal level As PlcTracingLevel, ByVal message As String)
 
             Program.entries.Add(String.Format("Trace {0}: {1}", level, message))
         End Sub
