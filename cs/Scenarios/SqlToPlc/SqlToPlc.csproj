@@ -7,7 +7,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IPS7LnkNet.Advanced" Version="2.5.2" />
+    <PackageReference Include="IPS7LnkNet.Advanced" Version="2.6.0" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
   <ItemGroup>
