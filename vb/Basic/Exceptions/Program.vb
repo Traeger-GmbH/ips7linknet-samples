@@ -16,15 +16,18 @@ Namespace Exceptions
 
             ' 1. Way: Default Try-Catch-(Finally) block.
             If True Then
-                ' An exception can occur upon different reasons, for e.g. either the IP address
-                ' of the PLC device is wrong, the PLC itself is not available or the PLC address
-                ' specified (like in the following example) is invalid. In such cases will then
-                ' an exception of the type 'PlcException' thrown.
+                ' An exception can occur upon different reasons. An invalid argument, such as the
+                ' address of a double word for a 16-bit value in the following example, throws
+                ' an exception of the type 'ArgumentException'. An access the PLC does not
+                ' answer or rejects, for e.g. because the PLC is not reachable or the data area
+                ' does not exist, throws an exception of the type 'PlcException'.
 
                 Try
                     connection.ReadInt16("DB111.DBD 6")
                 Catch ex As ArgumentException
                     Console.WriteLine(ex.Message)
+                Catch ex As PlcException
+                    Console.WriteLine("{0}: {1}", ex.Code, ex.Message)
                 End Try
             End If
 

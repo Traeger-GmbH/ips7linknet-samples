@@ -19,16 +19,20 @@ namespace Exceptions
 
             #region 1. Way: Default Try-Catch-(Finally) block.
             {
-                //// An exception can occur upon different reasons, for e.g. either the IP address
-                //// of the PLC device is wrong, the PLC itself is not available or the PLC address
-                //// specified (like in the following example) is invalid. In such a case an
-                //// exception of the type 'ArgumentException' is thrown.
+                //// An exception can occur upon different reasons. An invalid argument, such as the
+                //// address of a double word for a 16-bit value in the following example, throws
+                //// an exception of the type 'ArgumentException'. An access the PLC does not
+                //// answer or rejects, for e.g. because the PLC is not reachable or the data area
+                //// does not exist, throws an exception of the type 'PlcException'.
 
                 try {
                     connection.ReadInt16("DB111.DBD 6");
                 }
                 catch (ArgumentException ex) {
                     Console.WriteLine(ex.Message);
+                }
+                catch (PlcException ex) {
+                    Console.WriteLine("{0}: {1}", ex.Code, ex.Message);
                 }
             }
             #endregion
